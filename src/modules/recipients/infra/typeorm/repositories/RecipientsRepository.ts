@@ -29,4 +29,12 @@ export default class RecipientsRepository implements IRecipientsepository {
   public async findById(id: string): Promise<Recipient | undefined> {
     return this.ormRepository.findOne(id);
   }
+
+  public async findByEmail(email: string): Promise<Recipient | undefined> {
+    return this.ormRepository.findOne({
+      where: {
+        email,
+      },
+    });
+  }
 }

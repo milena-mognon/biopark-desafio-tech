@@ -1,3 +1,4 @@
+import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 import ICreateRecipient from '../dtos/ICreateRecipientDTO';
 import Recipient from '../infra/typeorm/entities/Recipient';
@@ -15,6 +16,12 @@ export default class CreateRecipientService {
     email,
     phone,
   }: ICreateRecipient): Promise<Recipient> {
+    const checkEmail = await this.recipientsRepository.findByEmail(email);
+
+    if (checkEmail) {
+      throw new AppError('This Email is already in use');
+    }
+
     const recipient = await this.recipientsRepository.create({
       name,
       email,
