@@ -3,6 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import AppError from '@shared/errors/AppError';
 import '@shared/infra/typeorm';
 import routes from '@shared/infra/http/routes';
+import '@shared/container';
 
 const app = express();
 
