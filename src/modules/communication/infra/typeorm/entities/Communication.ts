@@ -8,8 +8,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('recipients')
-class Recipient {
+import Recipient from '@modules/recipients/infra/typeorm/entities/Recipient';
+
+@Entity('communications')
+class Communication {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -39,4 +41,4 @@ class Recipient {
   canceled_at: Date;
 }
 
-export default Recipient;
+export default Communication;
