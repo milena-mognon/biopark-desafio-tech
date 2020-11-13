@@ -1,7 +1,8 @@
 import { Router } from 'express';
+import recipientsRoutes from '@modules/recipients/infra/http/routes/recipients.routes';
 
 const routes = Router();
 
-// add routes
+routes.use('/recipients', recipientsRoutes);
 
 export default routes;
