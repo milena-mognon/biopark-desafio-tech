@@ -17,6 +17,7 @@ export default class DeleteCommunicationService {
     if (!communication || communication.canceled_at !== null) {
       throw new AppError('Communication not found or deleted');
     }
+
     await this.communicationsRepository.delete(id);
   }
 }
