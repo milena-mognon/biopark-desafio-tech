@@ -4,16 +4,26 @@
 
 ## 🚀 Sobre
 
-Nesse desafio será desenvolvido uma plataforma de
-comunicação. Terá um endpoint para solicitação de agendamento de cominicação, outro para consultar o status do agendamento e um para remover.
+Nesse desafio será desenvolvido a primeira sprint de uma plataforma de
+comunicação. Foram desenvolvidas as funcionalidades de criar e buscar um destinatário, agendar uma solicitação de comunicação, buscar o status e deletar a solicitação.
 
 ## Endpoints
 
-**POST /comunication** - Agenda uma solicitação de comunicação
+**POST /recipients** - Cria um destinatário
+
+`{ "name": "Destinatário Teste", "email": "destinatario@mail.com", "phone": "(42) 99999-9999" }`
+
+**GET /recipients/:id** - Busca um destinatário pelo id
+
+**POST /comunications** - Agenda uma solicitação de comunicação
+
+`{ "recipient_id": "id do destinatário", "send_date": "2020-12-12T11:00:00-03:00", "message": "Mensagem a ser enviada no dia agendado" }`
 
 **GET /comunication/:ID/status** - Verifica o status de um agendamento de comunicação
 
-**DELETE /comunication/:ID** - Deleta um agendamento de comunicação
+**DELETE /comunication/:ID** - Deleta um agendamento de comunicação\*
+
+\* Não é feito a remoção definitiva do banco de dados, apenas editado um campo canceled_at com a data da remoção.
 
 ## 💻 Principais Tecnologias Utilizadas
 
@@ -33,7 +43,24 @@ ogias utilizadas no desenvolvimento do sistema.
 
 ## 🚀 Instalação e execução
 
-1. Faça um clone desse repositório;
-2. Entre na pasta do projeto pelo terminal;
-3. Rode `yarn` para instalar as dependências;
-4. Rode `yarn dev:server` para iniciar o servidor de desenvolvimento;
+- Faça um clone desse repositório;
+- Entre na pasta do projeto pelo terminal;
+- Rode `yarn` para instalar as dependências;
+
+---
+
+### ⚙ **Configuração do banco de dados (POSTGRES)**
+
+- Crie uma base de dados do Postgres;
+- No arquivo **ormconfig.json** modifique as credenciais (host, database, user, password);
+- Rode `yarn typeorm migration:run` para rodas as migrations;
+
+---
+
+- Rode `yarn dev:server` para iniciar o servidor de desenvolvimento;
+
+---
+
+### 🧪 Testes
+
+1. Rode `yarn test` para executar os testes;
