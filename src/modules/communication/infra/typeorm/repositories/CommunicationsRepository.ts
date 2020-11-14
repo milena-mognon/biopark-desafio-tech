@@ -32,7 +32,24 @@ export default class CommunicationsRepository
   public async checkCommunicationStatus(
     id: string,
   ): Promise<Communication | undefined> {
-    return this.ormRepository.findOne(id);
+    return this.ormRepository.findOne({
+      where: {
+        id,
+      },
+      select: ['id', 'status'],
+      relations: ['recipients'],
+    });
+  }
+
+  public async findCommunication(
+    id: string,
+  ): Promise<Communication | undefined> {
+    return this.ormRepository.findOne({
+      where: {
+        id,
+      },
+      relations: ['recipient'],
+    });
   }
 
   public async delete(id: string): Promise<void> {

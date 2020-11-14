@@ -8,5 +8,6 @@ export default interface ICommunicationRepository {
     recipient_id,
   }: ICreateCommunicationDTO): Promise<Communication>;
   checkCommunicationStatus(id: string): Promise<Communication | undefined>;
+  findCommunication(id: string): Promise<Communication | undefined>;
   delete(id: string): Promise<void>;
 }
