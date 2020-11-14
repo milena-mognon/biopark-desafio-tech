@@ -15,8 +15,8 @@ export default class FindCommunicationService {
       id,
     );
 
-    if (!communication) {
-      throw new AppError('Communication not found');
+    if (!communication || communication.canceled_at !== null) {
+      throw new AppError('Communication not found or deleted');
     }
 
     return communication;
