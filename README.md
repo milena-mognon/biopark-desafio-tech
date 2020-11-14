@@ -15,13 +15,13 @@ comunicação. Foram desenvolvidas as funcionalidades de criar e buscar um desti
 
 **GET /recipients/:id** - Busca um destinatário pelo id
 
-**POST /comunications** - Agenda uma solicitação de comunicação
+**POST /communications** - Agenda uma solicitação de comunicação
 
 `{ "recipient_id": "id do destinatário", "send_date": "2020-12-12T11:00:00-03:00", "message": "Mensagem a ser enviada no dia agendado" }`
 
-**GET /comunication/:ID/status** - Verifica o status de um agendamento de comunicação
+**GET /communications/:ID/status** - Verifica o status de um agendamento de comunicação
 
-**DELETE /comunication/:ID** - Deleta um agendamento de comunicação\*
+**DELETE /communications/:ID** - Deleta um agendamento de comunicação\*
 
 \* Não é feito a remoção definitiva do banco de dados, apenas editado um campo canceled_at com a data da remoção.
 
