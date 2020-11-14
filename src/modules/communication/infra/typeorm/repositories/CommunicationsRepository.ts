@@ -37,7 +37,7 @@ export default class CommunicationsRepository
         id,
       },
       select: ['id', 'status'],
-      relations: ['recipients'],
+      relations: ['recipient'],
     });
   }
 
