@@ -27,15 +27,13 @@ comunicação. Foram desenvolvidas as funcionalidades de criar e buscar um desti
 
 ## 💻 Principais Tecnologias Utilizadas
 
-#### Lista das principais tecnol
-
-ogias utilizadas no desenvolvimento do sistema.
+#### Lista das principais tecnologias utilizadas no desenvolvimento do sistema.
 
 - JavaScript - (Linguagem de Programação)
 - NodeJS - (Interpretador de JavaScript)
 - ExpressJS - (Framework NodeJS)
 - TypeScript - (Adiciona tipagem e alguns outros recursos ao JS)
-  Eslint - (Ferramenta de análise de código)
+- Eslint - (Ferramenta de análise de código)
 - Prettier - (Code Formatter)
 - Jest - (Estrutura de teste de JavaScript)
 - Postgres - (Banco de dados relacional)
