@@ -1,5 +1,6 @@
 import ICreateCommunicationDTO from '@modules/communication/dtos/ICreateCommunicationDTO';
 import ICommunicationRepository from '@modules/communication/repositories/ICommunicationRepository';
+import { formatISO } from 'date-fns';
 import { getRepository, Repository } from 'typeorm';
 import Communication from '../entities/Communication';
 
@@ -53,7 +54,8 @@ export default class CommunicationsRepository
   }
 
   public async delete(id: string): Promise<void> {
-    await this.ormRepository.findOne(id);
-    // not complete
+    await this.ormRepository.update(id, {
+      canceled_at: formatISO(new Date()),
+    });
   }
 }

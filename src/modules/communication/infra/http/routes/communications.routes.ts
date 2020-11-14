@@ -5,6 +5,6 @@ const communicationsRoutes = Router();
 
 communicationsRoutes.post('/', CommunicationsController.create);
 communicationsRoutes.get('/:id', CommunicationsController.show);
-// communicationsRoutes.delete('/', CommunicationsController.delete);
+communicationsRoutes.delete('/:id', CommunicationsController.delete);
 
 export default communicationsRoutes;
