@@ -43,6 +43,7 @@ export default class CreateCommunications1605302452234
           {
             name: 'canceled_at',
             type: 'timestamp',
+            isNullable: true,
           },
         ],
         foreignKeys: [

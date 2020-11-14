@@ -15,11 +15,13 @@ export default class CommunicationsRepository
     message,
     send_date,
     recipient_id,
+    status,
   }: ICreateCommunicationDTO): Promise<Communication> {
     const communication = this.ormRepository.create({
       message,
       send_date,
       recipient_id,
+      status,
     });
 
     await this.ormRepository.save(communication);
